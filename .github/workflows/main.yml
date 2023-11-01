@@ -1,0 +1,34 @@
+name: milestone tracking
+
+on:
+  issues:
+    types:
+      - closed
+    milestone:
+      types:
+        - opened
+        - edited
+        - deleted
+
+jobs:
+  track_milestones:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: check milestones
+        run: |
+          # your custom script or command to check and updates  milestones here
+
+          # for example, you can use the github api to fetch and update milestones.
+          # in this example, we 'll simply echo a message as the output.
+
+          echo "milestone tracking script executed successfully."
+
+      - name: set output
+        id: output
+        run: echo " milestone tracking completed."
+
+      - name: Display output 
+        run: |
+          echo "the milestone tracking workflow produced the following output."
+          echo "${{ steps.output.outputs.output_message }}"
