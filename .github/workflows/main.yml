@@ -1,4 +1,4 @@
-name: milestone tracking
+name: Milestone Tracking
 
 on:
   issues:
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
-      - name: check milestones
+      - name: Check Milestones
         run: |
           # your custom script or command to check and updates  milestones here
 
@@ -24,11 +24,11 @@ jobs:
 
           echo "milestone tracking script executed successfully."
 
-      - name: set output
+      - name: Set Output
         id: output
         run: echo " milestone tracking completed."
 
-      - name: Display output 
+      - name: Display Output 
         run: |
           echo "the milestone tracking workflow produced the following output."
           echo "${{ steps.output.outputs.output_message }}"
